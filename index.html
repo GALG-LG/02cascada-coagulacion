@@ -58,6 +58,15 @@ h2{font-size:.95rem;margin:14px 0 6px;color:var(--mut);font-weight:700}
 .common{margin-top:2px}
 .foot{font-size:.78rem;color:var(--mut);margin-top:18px;line-height:1.4}
 button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+@media (min-width:860px){
+main{max-width:1120px;padding:28px 28px 40px}
+h1{font-size:1.9rem}
+.sub{font-size:1rem}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:start}
+.chips{flex-wrap:wrap;overflow:visible}
+.map{max-width:540px;margin:0 auto}
+.node{min-height:64px}
+}
 @media (prefers-reduced-motion:reduce){.node{transition:none}}
 </style>
 </head>
@@ -66,6 +75,7 @@ button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 <h1>Cascada de la coagulación</h1>
 <p class="sub">Toca un fármaco, una prueba o un caso clínico para ver dónde actúa. Toca un factor para ver su detalle.</p>
 
+<div class="layout"><div class="ctl">
 <h2>Fármacos</h2>
 <div class="chips" id="drugs"></div>
 <div class="legend">
@@ -80,6 +90,8 @@ button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 <div class="chips" id="cases"></div>
 <div class="info" id="case" hidden></div>
 
+</div>
+<div class="vis">
 <div class="info" id="info"></div>
 
 <div class="map" id="map">
@@ -102,7 +114,8 @@ button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 <button class="node" data-n="XIII"><b>XIII</b><span>Entrecruza la fibrina</span></button>
 </div>
 
-<p class="foot">Material educativo basado en el modelo clásico. Los casos son orientativos y no sustituyen el juicio clínico. No sustituye las guías clínicas ni las fichas técnicas locales; verifica dosis, ajustes y reversión antes de aplicarlos.</p>
+</div></div>
+<p class="foot">Material educativo basado en el modelo clásico. Los casos son orientativos y no sustituyen el juicio clínico, las guías ni las fichas técnicas locales; verifica dosis, ajustes y reversión antes de aplicarlos.</p>
 </main>
 <script>
 var N={
